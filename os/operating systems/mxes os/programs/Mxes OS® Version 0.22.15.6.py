@@ -4,7 +4,7 @@ import time
 
 def get_user_info():
     if os.path.exists("user_info.txt"):
-        with open("c:\\operating systems\\mxes os\\user_info.txt", "r") as file:
+        with open("c:\\os\\operating systems\\mxes os\\user_info.txt", "r") as file:
             lines = file.readlines()
             return lines
     return None
@@ -20,12 +20,12 @@ if start_op=="new account":
     max_guesses = input("How many wrong guesses until guesses are frozen for a duration? ")
     save_user_info(username, password, hint, max_guesses)
     print("Account created successfully!")
-    with open("c:\\operating systems\\mxes os\\accounts info","w") as file:
+    with open("c:\\os\\operating systems\\mxes os\\accounts info","w") as file:
         file.seek(0,2)
         file.write(username)
         file.write("\n")
 if start_op=="change account":
-    with open("c:\\operating systems\\mxes os\\accounts list",'r') as file:
+    with open("c:\\os\\operating systems\\mxes os\\accounts list",'r') as file:
         accounts=file.readlines()
 elif start_op=="startup":
     def authenticate(username, password, hint, max_guesses):
@@ -64,7 +64,7 @@ elif start_op=="startup":
         max_guesses = input("How many wrong guesses until guesses are frozen for a duration? ")
         save_user_info(username, password, hint, max_guesses)
         print("Account created successfully!")
-        with open("c:\\operating systems\\mxes os\\accounts info","w") as file:
+        with open("c:\\os\\operating systems\\mxes os\\accounts info","w") as file:
             file.write(username)
 print("                                               _ __ ___ __  _____  ___     ___  ___ ")
 print("                                              | '_ ` _ /\ \/ / _ \/ __|   / _ \/ __|")
@@ -98,7 +98,7 @@ while running==True:
             task_state = input('Is the task finished or not? ')
             task_dis = input('What is the description? If there is none, type "null" ')
             time_added = get_current_time_cst()
-            with open("c:\\operating systems\\mxes os\\tasks.txt", "a") as file:
+            with open("c:\\os\\operating systems\\mxes os\\tasks.txt", "a") as file:
         # Check if the file is empty
                 file.seek(0, 2)  # Move to the end of the file
                 if file.tell() != 0:  # If file is not empty
@@ -110,16 +110,16 @@ while running==True:
             task_state = input('Is the task finished or not? ')
             task_dis = input('What is the description? If there is none, type "null" ') 
             time_added = get_current_time_cst()
-            with open("c:\\operating systems\\mxes os\\tasks.txt", "r") as file:
+            with open("c:\\os\\operating systems\\mxes os\\tasks.txt", "r") as file:
                 lines = file.readlines(task_loc)
-            with open("c:\\operating systems\\mxes os\\tasks.txt", "w") as file:
+            with open("c:\\os\\operating systems\\mxes os\\tasks.txt", "w") as file:
                 file.write(f"Task: {new_name}, State: {task_state}\nDescription: {task_dis}\nTime Added: {time_added}\n")
                 print("Name changed")
         def delete_task():
             del_task = input('What is the name of the task you want to delete? ')
-            with open("c:\\operating systems\\mxes os\\tasks.txt", "r") as file:
+            with open("c:\\os\\operating systems\\mxes os\\tasks.txt", "r") as file:
                 lines = file.readlines()  # Read all lines from the file
-            with open("c:\\operating systems\\mxes os\\tasks.txt", "w") as file:
+            with open("c:\\os\\operating systems\\mxes os\\tasks.txt", "w") as file:
                 task_deleted = False
                 i = 0
                 while i < len(lines):
@@ -135,7 +135,7 @@ while running==True:
                 else:
                     print("Task not found.")
         def view_tasks():
-            with open("c:\\operating systems\\mxes os\\tasks.txt", "r") as file:
+            with open("c:\\os\\operating systems\\mxes os\\tasks.txt", "r") as file:
                 tasks = file.readlines()
                 for task in tasks:
                     print(task.strip())  # Strip to remove newline character
