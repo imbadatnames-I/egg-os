@@ -9,12 +9,12 @@ current_entry = []
 keywords=["task manager","shutdown","text doc","password manager","clock","journal","math","standby","text style","help","guess the number","settings","recipe"]
 def get_user_info():
     if os.path.exists("user_info.txt"):
-        with open("c:\\operating systems\\mxes os\\user_info.txt", "r") as file:
+        with open("c:\\os\\operating systems\\mxes os\\user_info.txt", "r") as file:
             lines = file.readlines()
             return lines
     return None
 def save_user_info(username, password, hint, max_guesses, permission_level):
-    with open("c:\\operating systems\\mxes os\\user_info.txt", "w") as file:
+    with open("c:\\os\\operating systems\\mxes os\\user_info.txt", "w") as file:
         file.write(f"{username}\n{password}\n{hint}\n{max_guesses}\n{permission_level}")
 def authenticate(username, password, hint, max_guesses):
     attempts = 0
@@ -91,7 +91,7 @@ while running==True:
             task_state = input("> Is the task finished or not? ")
             task_dis = input("> What is the description? If there is none, type 'null' ")
             time_added = get_current_time_cst()
-            with open("c:\\operating systems\\mxes os\\tasks.txt", "a") as file:
+            with open("c:\\os\\operating systems\\mxes os\\tasks.txt", "a") as file:
         # Check if the file is empty
                 file.seek(0, 2)  # Move to the end of the file
                 if file.tell() != 0:  # If file is not empty
@@ -103,16 +103,16 @@ while running==True:
             task_state = input("> Is the task finished or not? ")
             task_dis = input("> What is the description? If there is none, type 'null' ") 
             time_added = get_current_time_cst()
-            with open("c:\\operating systems\\mxes os\\tasks.txt", "r") as file:
+            with open("c:\\os\\operating systems\\mxes os\\tasks.txt", "r") as file:
                 lines = file.readlines(task_loc)
-            with open("c:\\operating systems\\mxes os\\tasks.txt", "w") as file:
+            with open("c:\\os\\operating systems\\mxes os\\tasks.txt", "w") as file:
                 file.write(f"Task: {new_name}, State: {task_state}\nDescription: {task_dis}\nTime Added: {time_added}\n")
                 print("> Name changed")
         def delete_task():
             del_task = input("> What is the name of the task you want to delete? ")
-            with open("c:\\operating systems\\mxes os\\tasks.txt", "r") as file:
+            with open("c:\\os\\operating systems\\mxes os\\tasks.txt", "r") as file:
                 lines = file.readlines()  # Read all lines from the file
-            with open("c:\\operating systems\\mxes os\\tasks.txt", "w") as file:
+            with open("c:\\os\\operating systems\\mxes os\\tasks.txt", "w") as file:
                 task_deleted = False
                 i = 0
                 while i < len(lines):
@@ -128,7 +128,7 @@ while running==True:
                 else:
                     print("> Task not found.")
         def view_tasks():
-            with open("c:\\operating systems\\mxes os\\tasks.txt", "r") as file:
+            with open("c:\\os\\operating systems\\mxes os\\tasks.txt", "r") as file:
                 tasks = file.readlines()
                 for task in tasks:
                     print(task.strip())  # Strip to remove newline character
@@ -208,12 +208,12 @@ while running==True:
     elif program=="password":
         # Function to read all passwords from file
         def read_passwords():
-            with open("c:\\operating systems\\mxes os\\password_list.txt", "r") as file:
+            with open("c:\\os\\operating systems\\mxes os\\password_list.txt", "r") as file:
                 return file.readlines()
         
         # Function to write all passwords to file
         def write_passwords(lines):
-            with open("c:\\operating systems\\mxes os\\password_list.txt", "w") as file:
+            with open("c:\\os\\operating systems\\mxes os\\password_list.txt", "w") as file:
                 file.writelines(lines)
     
         # Function to add a new password
@@ -222,7 +222,7 @@ while running==True:
             account_name = input("> Account name? ")
             password = input("> Password? ")
     
-            with open("c:\\operating systems\\mxes os\\password_list.txt", "a") as file:
+            with open("c:\\os\\operating systems\\mxes os\\password_list.txt", "a") as file:
                 if file.tell() > 0:
                     file.write("\n")  # Ensure newline between entries
                 file.write(f"> {password_site}: {account_name} / {password}")
