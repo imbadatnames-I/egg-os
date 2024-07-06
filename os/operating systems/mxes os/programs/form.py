@@ -1,6 +1,0 @@
-programs=["boot_manager","bios","kernel","program","ascii print.py","audio.py","bace32.py","cal.py","calc.py","calender.py","clock.py","contact.py","dice.py","e.py","fib.py","file.py","journal.py","listdir programs.py","math.py","money.py","Mxes OS® Version 0.22.15.6.py","Mxes OS® Version 0.41.32.8.py","Mxes OS® Version 0.42.43.6.py","Mxes OS® Version 0.42.92.8.py","Mxes OS® Version 0.48.13.4.py","Mxes OS® Version 0.48.60.6.py","Mxes OS® Version 0.52.58.8.py","Mxes OS® Version 0.58.30.8.py","Mxes OS® Version 0.72.22.5.py","Mxes OS® Version 0.97.15.6.py","Mxes OS® Version 1.10.16.2.py","password.py","point tracker.py","recording.py","size.py","sort.py","steps.py","task manager.py","test.py","text doc.py","text style.py","tts.py","unit.py","version open.py","wordle.py"]
-programs_size=[1183,4906,580,11041,630,816,241,1862,5597,19,118,858,3694,1200,845,455,2373,2228,2086,1442,5248,11078,20664,21218,21464,24067,24874,26294,29154,72246,48586,55089,4107,5637,1558,551,0,34,5097,1225,2915,1695,220,4719,374,3122]
-while len(programs)>0:
-    print(f"Program name: {programs[0]}\nProgram size: {programs_size[0]}\nDoes it work y/n: \nfeatures:\n\n\n")
-    programs_size.pop(0)
-    programs.pop(0)
